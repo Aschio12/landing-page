@@ -5,6 +5,7 @@
   --font-mono: var(--font-geist-mono);
   
   --animate-gradient: glow 3s ease-in-out infinite alternate;
+  --animate-shimmer: shimmer 2s linear infinite;
 }
 
 @keyframes glow {
@@ -13,6 +14,15 @@
   }
   100% {
     background-position: 100% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
   }
 }
 
