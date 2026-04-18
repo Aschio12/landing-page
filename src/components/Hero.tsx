@@ -10,77 +10,73 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden pt-24 pb-32 bg-slate-950">
       
-      {/* ======================= T H E  Q U A N T U M  N E X U S ======================= */}
-      {/* Base Layer: Deep Slate */}
-      <div className="absolute inset-0 bg-slate-950 z-0" />
+      {/* ======================= THE CYBER-AI NEXUS ======================= */}
+      <div className="absolute inset-0 bg-slate-950 z-0 overflow-hidden" />
 
-      {/* The Liquid Aurora: A sweeping, rotating conic gradient */}
-      <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+      {/* Pulsating Hexagonal Tech Grid */}
+      <div className="absolute inset-0 z-0" style={{ perspective: "1200px" }}>
         <motion.div
-          animate={{
-            rotate: [0, 360],
-          }}
+           animate={{ rotateX: [60, 60], y: [0, 80] }}
+           transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+           className="absolute w-[200%] h-[200%] -left-[50%] top-[-20%] opacity-20"
+           style={{
+             backgroundImage: "linear-gradient(rgba(139, 92, 246, 0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.4) 1px, transparent 1px)",
+             backgroundSize: "60px 60px"
+           }}
+        />
+      </div>
+
+      {/* Floating AI Core Rings */}
+      <div className="absolute top-[30%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] z-0 pointer-events-none opacity-40 mix-blend-screen flex items-center justify-center">
+        <motion.div
+          animate={{ rotate: 360, scale: [1, 1.05, 1] }}
+          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          className="absolute w-full h-full rounded-full border-[2px] border-dashed border-indigo-500/30"
+        />
+        <motion.div
+          animate={{ rotate: -360, scale: [1, 1.1, 1] }}
           transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-          className="absolute -top-[50%] -left-[50%] w-[200%] h-[200%] opacity-40 mix-blend-screen"
+          className="absolute w-[85%] h-[85%] rounded-full border-[1px] border-indigo-400/20"
+        />
+        <motion.div
+          animate={{ rotate: 180, scale: [0.95, 1.05, 0.95] }}
+          transition={{ repeat: Infinity, duration: 15, ease: "easeInOut" }}
+          className="absolute w-[70%] h-[70%] rounded-full border-[3px] border-dotted border-fuchsia-500/40"
+        />
+        {/* Core Glow */}
+        <motion.div
+          animate={{ opacity: [0.5, 0.8, 0.5], scale: [0.8, 1, 0.8] }}
+          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+          className="absolute w-[40%] h-[40%] bg-indigo-600/30 rounded-full blur-[80px]"
+        />
+      </div>
+
+      {/* Floating Data Nodes */}
+      {Array.from({ length: 15 }).map((_, i) => (
+        <motion.div
+          key={i}
+          animate={{
+            y: [Math.random() * 100, Math.random() * -300],
+            x: [Math.random() * 100, Math.random() * -100],
+            opacity: [0, 0.8, 0],
+            scale: [0.5, 1.5, 0.5],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 5 + Math.random() * 5,
+            delay: Math.random() * 5,
+            ease: "linear",
+          }}
+          className="absolute w-2 h-2 bg-fuchsia-400 rounded-full shadow-[0_0_10px_rgba(232,121,249,0.8)] z-0"
           style={{
-            backgroundImage: "conic-gradient(from 0deg at 50% 50%, rgba(30,27,75,0) 0%, rgba(99,102,241,0.5) 25%, rgba(139,92,246,0.3) 50%, rgba(30,27,75,0) 75%, rgba(79,70,229,0.4) 100%)",
-            filter: "blur(90px)"
+            left: `${Math.random() * 100}%`,
+            top: `${70 + Math.random() * 30}%`,
           }}
         />
-      </div>
+      ))}
 
-      {/* High-Resolution Engineering Dot Grid */}
-      <div 
-        className="absolute inset-0 z-0 opacity-20 pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(circle at center, #818cf8 1px, transparent 1px)`,
-          backgroundSize: "32px 32px"
-        }}
-      />
-      
-      {/* Data Pulse Rings */}
-      <div className="absolute inset-0 overflow-hidden flex items-center justify-center z-0 pointer-events-none opacity-40">
-        <motion.div
-           animate={{ scale: [0.8, 2], opacity: [0.5, 0] }}
-           transition={{ repeat: Infinity, duration: 4, ease: "easeOut" }}
-           className="absolute w-[300px] h-[300px] border border-indigo-500 rounded-full"
-        />
-        <motion.div
-           animate={{ scale: [0.8, 2.5], opacity: [0.3, 0] }}
-           transition={{ repeat: Infinity, duration: 6, ease: "easeOut", delay: 1 }}
-           className="absolute w-[400px] h-[400px] border border-violet-500 rounded-full"
-        />
-      </div>
-
-      {/* Floating Developer Syntax (Subtle & Elegant) */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-[0.15]">
-        <motion.div 
-          animate={{ y: [0, -30, 0], rotate: [0, 10, 0] }} 
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }} 
-          className="absolute text-7xl font-mono text-indigo-300 top-[20%] left-[15%]"
-        >
-          {"{ }"}
-        </motion.div>
-        <motion.div 
-          animate={{ y: [0, 40, 0], rotate: [0, -15, 0] }} 
-          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }} 
-          className="absolute text-6xl font-mono text-fuchsia-300 bottom-[20%] right-[10%]"
-        >
-          {"< >"}
-        </motion.div>
-        <motion.div 
-          animate={{ x: [0, -20, 0], y: [0, 20, 0] }} 
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }} 
-          className="absolute text-5xl font-mono text-slate-400 top-[15%] right-[25%]"
-        >
-          {"/"}
-        </motion.div>
-      </div>
-
-      {/* Vignette Fade Map to seamlessly blend borders */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_70%_70%_at_50%_50%,transparent_0%,rgba(2,6,23,0.9)_100%)] pointer-events-none" />
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-slate-950 via-transparent to-slate-950 pointer-events-none" />
-      
+      {/* Vignette to blend into the rest of the site */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(2,6,23,0.8)_80%,rgba(2,6,23,1)_100%)] z-0 pointer-events-none" />
       {/* ====================================================================================== */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
