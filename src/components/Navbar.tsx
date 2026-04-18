@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { Activity } from "lucide-react";
+import { useAuth } from "./AuthContext";
 
 export function Navbar() {
+  const { openModal } = useAuth();
+
   return (
     <nav className="border-b border-white/10 bg-slate-950/50 backdrop-blur-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,15 +23,18 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
-            <Link href="#" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            <button 
+              onClick={() => openModal("signin")}
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            >
               Sign In
-            </Link>
-            <Link 
-              href="#" 
-              className="text-sm font-medium bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md transition-all hover:shadow-[0_0_15px_rgba(99,102,241,0.5)]"
+            </button>
+            <button 
+              onClick={() => openModal("signup")}
+              className="text-sm font-medium bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md transition-all hover:shadow-[0_0_15px_rgba(99,102,241,0.5)] cursor-pointer"
             >
               Get Started
-            </Link>
+            </button>
           </div>
         </div>
       </div>
