@@ -19,7 +19,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-slate-300 backdrop-blur-md"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.15)] text-sm font-medium text-slate-300 backdrop-blur-xl"
           >
             <Sparkles className="h-4 w-4 text-indigo-400" />
             <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent font-bold">
@@ -33,10 +33,12 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight"
+            className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight"
           >
-            Ship Better Code, <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-500 to-indigo-500 animate-pulse">
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+              Ship Better Code,
+            </span> <br className="hidden sm:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-purple-300 to-indigo-400 drop-shadow-[0_0_25px_rgba(167,139,250,0.6)] bg-[length:200%_auto] animate-gradient">
               Faster with AI.
             </span>
           </motion.h1>
@@ -45,7 +47,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-slate-400 max-w-2xl mx-auto"
+            className="text-xl max-w-2xl mx-auto text-transparent bg-clip-text bg-gradient-to-b from-slate-200 to-slate-500 font-medium drop-shadow-sm leading-relaxed"
           >
             The AI-powered engineering autonomous assistant. We analyze commits, predict sprint bottlenecks, and perform expert code reviews in seconds.
           </motion.p>
@@ -76,11 +78,11 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="mt-20 relative mx-auto max-w-5xl rounded-xl border border-white/10 bg-slate-900 shadow-2xl overflow-hidden shadow-indigo-500/20 perspective-1000"
+          className="mt-20 relative mx-auto max-w-5xl rounded-xl border border-white/20 bg-slate-900/60 backdrop-blur-2xl shadow-3xl overflow-hidden shadow-indigo-500/30 perspective-1000"
           style={{ transform: "rotateX(2deg) scale(0.95)" }}
         >
           {/* Mockup Header */}
-          <div className="flex items-center justify-between border-b border-white/10 bg-slate-950 px-4 py-3">
+          <div className="flex items-center justify-between border-b border-white/10 bg-slate-950/50 backdrop-blur-md px-4 py-3">
             <div className="flex items-center gap-2">
               <div className="flex gap-1.5">
                 <div className="h-3 w-3 rounded-full bg-red-500" />
@@ -96,10 +98,10 @@ export function Hero() {
           </div>
 
           {/* Mockup Content (The "Wow" Factor UI) */}
-          <div className="flex h-[450px] bg-slate-900 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),rgba(255,255,255,0))]">
+          <div className="flex h-[450px] bg-slate-950/40 backdrop-blur-xl bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.2),rgba(255,255,255,0))]">
             
             {/* Left Sidebar (Nav) */}
-            <div className="w-16 border-r border-white/5 flex flex-col items-center py-4 gap-6 bg-slate-900/50">
+            <div className="w-16 border-r border-white/10 flex flex-col items-center py-4 gap-6 bg-slate-900/30">
               <div className="p-2 cursor-pointer text-indigo-400 bg-indigo-500/10 rounded-lg"><Terminal className="h-5 w-5" /></div>
               <div className="p-2 cursor-pointer text-slate-500 hover:text-slate-300"><BarChart3 className="h-5 w-5" /></div>
               <div className="p-2 cursor-pointer text-slate-500 hover:text-slate-300"><Database className="h-5 w-5" /></div>
