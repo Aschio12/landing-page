@@ -3,41 +3,54 @@
 import Link from "next/link";
 import { Activity } from "lucide-react";
 import { useAuth } from "./AuthContext";
+import { motion } from "framer-motion";
 
 export function Navbar() {
   const { openModal } = useAuth();
 
   return (
-    <nav className="border-b border-white/10 bg-slate-950/50 backdrop-blur-md sticky top-0 z-50">
+    <motion.nav 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="border-b border-white/10 bg-slate-950/50 backdrop-blur-md sticky top-0 z-50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center gap-2">
-            <Activity className="h-6 w-6 text-indigo-500" />
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center gap-2 cursor-pointer"
+          >
+            <Activity className="h-6 w-6 text-[#646cff]" />
             <span className="font-bold text-xl tracking-tight text-white">DevMetrics AI</span>
-          </div>
+          </motion.div>
           
           <div className="hidden md:flex items-center gap-8">
-            <Link href="#features" className="text-sm text-slate-300 hover:text-white transition-colors">Features</Link>
-            <Link href="#how-it-works" className="text-sm text-slate-300 hover:text-white transition-colors">How it Works</Link>
-            <Link href="#pricing" className="text-sm text-slate-300 hover:text-white transition-colors">Pricing</Link>
+            <motion.div whileHover={{ y: -2 }}><Link href="#features" className="text-sm text-slate-300 hover:text-white transition-colors">Features</Link></motion.div>
+            <motion.div whileHover={{ y: -2 }}><Link href="#how-it-works" className="text-sm text-slate-300 hover:text-white transition-colors">How it Works</Link></motion.div>
+            <motion.div whileHover={{ y: -2 }}><Link href="#pricing" className="text-sm text-slate-300 hover:text-white transition-colors">Pricing</Link></motion.div>
           </div>
 
           <div className="flex items-center gap-4">
-            <button 
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => openModal("signin")}
-              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors cursor-pointer"
             >
               Sign In
-            </button>
-            <button 
+            </motion.button>
+            <motion.button 
+              whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(100,108,255,0.5)" }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => openModal("signup")}
-              className="text-sm font-medium bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md transition-all hover:shadow-[0_0_15px_rgba(99,102,241,0.5)] cursor-pointer"
+              className="text-sm font-medium bg-[#646cff] hover:bg-[#5252d6] text-white px-5 py-2.5 rounded-lg transition-colors cursor-pointer"
             >
               Get Started
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 }

@@ -70,22 +70,26 @@ export function Pricing() {
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              whileHover={{ y: -5 }}
-              className={`relative rounded-3xl p-8 transition-all duration-300 
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.4 }}
+              transition={{ duration: 0.5, delay: i * 0.15, type: "spring", bounce: 0.4 }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className={`relative rounded-3xl p-8 transition-all duration-300 cursor-pointer
                 ${plan.highlight 
-                  ? "bg-slate-900 border-2 border-indigo-500 shadow-[0_0_40px_rgba(99,102,241,0.2)] md:-translate-y-4" 
+                  ? "bg-slate-900 border-2 border-[#646cff] shadow-[0_0_40px_rgba(100,108,255,0.2)] hover:shadow-[0_0_60px_rgba(100,108,255,0.4)] md:-translate-y-4" 
                   : "bg-slate-900/50 border border-white/10 hover:border-white/20"}
               `}
             >
               {plan.highlight && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg shadow-indigo-500/50">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
+                  <motion.span 
+                    animate={{ y: [0, -4, 0] }}
+                    transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                    className="flex bg-[#646cff] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg shadow-[#646cff]/50"
+                  >
                     Most Popular
-                  </span>
+                  </motion.span>
                 </div>
               )}
               
@@ -101,7 +105,7 @@ export function Pricing() {
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, j) => (
                   <li key={j} className="flex gap-3 text-slate-300">
-                    <Check className={`h-5 w-5 shrink-0 ${plan.highlight ? "text-indigo-400" : "text-slate-500"}`} />
+                    <Check className={`h-5 w-5 shrink-0 ${plan.highlight ? "text-[#646cff]" : "text-slate-500"}`} />
                     <span className="text-sm">{feature}</span>
                   </li>
                 ))}
@@ -111,8 +115,8 @@ export function Pricing() {
                 href="#"
                 className={`block w-full py-3 px-4 rounded-lg text-center text-sm font-semibold transition-all
                   ${plan.highlight 
-                    ? "bg-indigo-500 hover:bg-indigo-600 text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]" 
-                    : "bg-white/5 hover:bg-white/10 text-white border border-white/10"}
+                    ? "bg-[#646cff] hover:bg-[#5252d6] text-white shadow-[0_0_20px_rgba(100,108,255,0.4)] hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(100,108,255,0.6)]" 
+                    : "bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]"}
                 `}
               >
                 {plan.price === "Custom" ? "Contact Sales" : "Get Started"}

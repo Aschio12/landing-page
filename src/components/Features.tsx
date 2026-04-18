@@ -36,18 +36,19 @@ export function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
             className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400"
           >
             Engineering metrics that <br/> actually matter.
           </motion.h2>
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
             className="mt-6 text-lg text-slate-400"
           >
             Everything you need to ship faster, unblock your team, and build an elite engineering culture without the boilerplate.
@@ -58,12 +59,12 @@ export function Features() {
           {features.map((feature, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              whileHover={{ y: -5 }}
-              className={`relative rounded-2xl border border-white/5 bg-slate-900/50 backdrop-blur-md overflow-hidden p-8 hover:border-white/10 transition-all duration-300 group shadow-lg`}
+              initial={{ opacity: 0, y: 50, rotateX: 20 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: i * 0.15, type: "spring" }}
+              whileHover={{ y: -10, scale: 1.02, boxShadow: "0px 20px 40px rgba(100,108,255,0.15)" }}
+              className={`relative rounded-2xl border border-white/5 bg-slate-900/50 backdrop-blur-md overflow-hidden p-8 hover:border-[#646cff]/40 transition-all duration-300 group shadow-lg cursor-pointer`}
             >
               <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${feature.gradient} opacity-50 group-hover:opacity-100 transition-opacity duration-500 rounded-full blur-2xl`} />
               

@@ -140,27 +140,32 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
           >
-            <button
+            <motion.button
+              whileHover={{ scale: 1.05, boxShadow: "0px 0px 30px rgba(100,108,255,0.6)" }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => openModal("signup")}
-              className="relative flex items-center justify-center w-full sm:w-auto gap-2 px-8 py-4 rounded-xl bg-cyan-500 text-slate-950 font-bold tracking-wide transition-all hover:bg-cyan-400 border border-cyan-400 hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] hover:-translate-y-1 overflow-hidden group"
+              className="relative flex items-center justify-center w-full sm:w-auto gap-2 px-8 py-4 rounded-xl bg-[#646cff] text-white font-bold tracking-wide transition-all border border-[#8288ff] overflow-hidden group cursor-pointer"
             >
-              <span className="absolute inset-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.3)_50%,transparent_75%)] bg-[length:250%_250%] group-hover:animate-shimmer" />
+              <span className="absolute inset-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%)] bg-[length:250%_250%] group-hover:animate-shimmer" />
               <span className="relative flex items-center gap-2">Start 14-Day Free Trial <ArrowRight className="h-5 w-5" /></span>
-            </button>
-            <button
-              className="flex items-center justify-center w-full sm:w-auto gap-2 px-8 py-4 rounded-xl bg-slate-900/50 hover:bg-slate-800 border border-cyan-500/30 hover:border-cyan-400/60 text-cyan-50 font-medium transition-all hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:-translate-y-1 backdrop-blur-md"
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(100,108,255,0.2)" }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center justify-center w-full sm:w-auto gap-2 px-8 py-4 rounded-xl bg-slate-900/50 hover:bg-slate-800 border border-[#646cff]/30 hover:border-[#8288ff]/60 text-white font-medium transition-all backdrop-blur-md cursor-pointer"
             >
               Book a Demo
-            </button>
+            </motion.button>
           </motion.div>
         </div>
 
         {/* Realistic Dashboard Mockup */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="mt-20 relative mx-auto max-w-5xl rounded-xl border border-white/20 bg-slate-900/60 backdrop-blur-2xl shadow-3xl overflow-hidden shadow-cyan-500/30 perspective-1000"
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mt-20 relative mx-auto max-w-5xl rounded-xl border border-white/20 bg-slate-900/60 backdrop-blur-2xl shadow-3xl overflow-hidden shadow-[#646cff]/30 perspective-1000"
           style={{ transform: "rotateX(2deg) scale(0.95)" }}
         >
           {/* Mockup Header */}
