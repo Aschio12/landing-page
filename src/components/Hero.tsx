@@ -10,74 +10,76 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden pt-24 pb-32 bg-slate-950">
       
-      {/* ======================= M I N D - B L O W I N G  B A C K G R O U N D ======================= */}
-      
-      {/* Deep Space Radial Core */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,31,104,0.15)_0%,rgba(2,6,23,1)_100%)] z-0" />
+      {/* ======================= T H E  Q U A N T U M  N E X U S ======================= */}
+      {/* Base Layer: Deep Slate */}
+      <div className="absolute inset-0 bg-slate-950 z-0" />
 
-      {/* Retro-Futuristic Infinity Grid */}
-      <div className="absolute inset-0 z-0 [perspective:1000px]">
-        <motion.div 
-          animate={{ backgroundPosition: ["0px 0px", "0px 100px"] }}
-          transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
-          className="absolute inset-x-0 bottom-[-50%] h-[150%] origin-top [transform:rotateX(75deg)]"
+      {/* The Liquid Aurora: A sweeping, rotating conic gradient */}
+      <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+        <motion.div
+          animate={{
+            rotate: [0, 360],
+          }}
+          transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+          className="absolute -top-[50%] -left-[50%] w-[200%] h-[200%] opacity-40 mix-blend-screen"
           style={{
-            backgroundImage: "linear-gradient(to right, rgba(99, 102, 241, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(99, 102, 241, 0.1) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-            maskImage: "linear-gradient(to top, white 20%, transparent 80%)"
+            backgroundImage: "conic-gradient(from 0deg at 50% 50%, rgba(30,27,75,0) 0%, rgba(99,102,241,0.5) 25%, rgba(139,92,246,0.3) 50%, rgba(30,27,75,0) 75%, rgba(79,70,229,0.4) 100%)",
+            filter: "blur(90px)"
           }}
         />
       </div>
 
-      {/* Floating Neural Orbs */}
-      <motion.div
-        animate={{ 
-          y: [0, -30, 0],
-          scale: [1, 1.1, 1],
-          rotate: [0, 90, 0]
+      {/* High-Resolution Engineering Dot Grid */}
+      <div 
+        className="absolute inset-0 z-0 opacity-20 pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(circle at center, #818cf8 1px, transparent 1px)`,
+          backgroundSize: "32px 32px"
         }}
-        transition={{ repeat: Infinity, duration: 15, ease: "easeInOut" }}
-        className="absolute top-[20%] left-[20%] w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[140px] mix-blend-screen z-0 pointer-events-none"
       />
-      <motion.div
-        animate={{ 
-          y: [0, 50, 0],
-          x: [0, 30, 0],
-          scale: [1, 1.2, 1]
-        }}
-        transition={{ repeat: Infinity, duration: 20, ease: "easeInOut", delay: 1 }}
-        className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-fuchsia-600/20 rounded-full blur-[130px] mix-blend-screen z-0 pointer-events-none"
-      />
-       <motion.div
-        animate={{ 
-          y: [0, -40, 0],
-          x: [0, -40, 0]
-        }}
-        transition={{ repeat: Infinity, duration: 18, ease: "easeInOut", delay: 2 }}
-        className="absolute bottom-[-10%] left-[40%] w-[700px] h-[400px] bg-blue-600/20 rounded-full blur-[150px] mix-blend-screen z-0 pointer-events-none"
-      />
-
-      {/* Shooting Neural Pulses (Vertical light beams) */}
-      <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+      
+      {/* Data Pulse Rings */}
+      <div className="absolute inset-0 overflow-hidden flex items-center justify-center z-0 pointer-events-none opacity-40">
         <motion.div
-          animate={{ y: ["-100%", "200%"] }}
-          transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-          className="absolute left-[30%] top-0 w-[1px] h-[30%] bg-gradient-to-b from-transparent via-cyan-400 to-transparent opacity-30"
+           animate={{ scale: [0.8, 2], opacity: [0.5, 0] }}
+           transition={{ repeat: Infinity, duration: 4, ease: "easeOut" }}
+           className="absolute w-[300px] h-[300px] border border-indigo-500 rounded-full"
         />
         <motion.div
-          animate={{ y: ["-100%", "200%"] }}
-          transition={{ repeat: Infinity, duration: 5, ease: "linear", delay: 1.5 }}
-          className="absolute right-[25%] top-0 w-[2px] h-[40%] bg-gradient-to-b from-transparent via-indigo-500 to-transparent opacity-30 shadow-[0_0_10px_rgba(99,102,241,0.5)]"
-        />
-        <motion.div
-          animate={{ y: ["-100%", "200%"] }}
-          transition={{ repeat: Infinity, duration: 4, ease: "linear", delay: 0.5 }}
-          className="absolute left-[60%] top-0 w-[1px] h-[20%] bg-gradient-to-b from-transparent via-fuchsia-400 to-transparent opacity-20"
+           animate={{ scale: [0.8, 2.5], opacity: [0.3, 0] }}
+           transition={{ repeat: Infinity, duration: 6, ease: "easeOut", delay: 1 }}
+           className="absolute w-[400px] h-[400px] border border-violet-500 rounded-full"
         />
       </div>
 
-      {/* Static overlay mask for smooth fading at the top and bottom edges */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-transparent to-slate-950 z-0 pointer-events-none" />
+      {/* Floating Developer Syntax (Subtle & Elegant) */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-[0.15]">
+        <motion.div 
+          animate={{ y: [0, -30, 0], rotate: [0, 10, 0] }} 
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }} 
+          className="absolute text-7xl font-mono text-indigo-300 top-[20%] left-[15%]"
+        >
+          {"{ }"}
+        </motion.div>
+        <motion.div 
+          animate={{ y: [0, 40, 0], rotate: [0, -15, 0] }} 
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }} 
+          className="absolute text-6xl font-mono text-fuchsia-300 bottom-[20%] right-[10%]"
+        >
+          {"< >"}
+        </motion.div>
+        <motion.div 
+          animate={{ x: [0, -20, 0], y: [0, 20, 0] }} 
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }} 
+          className="absolute text-5xl font-mono text-slate-400 top-[15%] right-[25%]"
+        >
+          {"/"}
+        </motion.div>
+      </div>
+
+      {/* Vignette Fade Map to seamlessly blend borders */}
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_70%_70%_at_50%_50%,transparent_0%,rgba(2,6,23,0.9)_100%)] pointer-events-none" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-slate-950 via-transparent to-slate-950 pointer-events-none" />
       
       {/* ====================================================================================== */}
 
