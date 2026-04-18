@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Activity, X, Github, Mail } from "lucide-react";
+import { Activity, X, Terminal, Mail } from "lucide-react";
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -56,7 +56,7 @@ export function AuthModal({ isOpen, mode, onClose, setMode }: AuthModalProps) {
 
                 <div className="space-y-4">
                   <button className="w-full flex items-center justify-center gap-2 bg-white text-slate-950 font-semibold py-2.5 rounded-lg hover:bg-slate-200 transition-colors">
-                    <Github className="h-5 w-5" />
+                    <Terminal className="h-5 w-5" />
                     Continue with GitHub
                   </button>
                   <button className="w-full flex items-center justify-center gap-2 bg-[#24292F] text-white font-semibold py-2.5 rounded-lg hover:bg-[#24292F]/80 border border-white/10 transition-colors">
